@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: start;
 
-  @media (max-width: vars.$screen-md) {
+  @media (max-width: vars.$screen-lg) {
     & {
       justify-content: center;
     }
