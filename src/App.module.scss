@@ -1,0 +1,56 @@
+@use '@global/variables' as vars;
+
+.layout__content {
+  margin: 0 auto;
+  padding: 25px 20px 47px;
+  width: fit-content;
+  display: flex;
+  gap: 23px;
+  max-width: 1440px;
+
+  @media (max-width: vars.$screen-md) {
+    & {
+      gap: 0;
+    }
+  }
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      flex-direction: column;
+      gap: 24px;
+      padding: 25px 8px 47px;
+    }
+  }
+}
+
+.title__container {
+  height: 88px;
+  padding: 22px 50px;
+  border-radius: 16px;
+  background-color: vars.$mudium-blue;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+
+  @media (max-width: vars.$screen-md) {
+    & {
+      justify-content: center;
+    }
+  }
+}
+
+.title__container_collapsed {
+  justify-content: center;
+}
+
+.title {
+  @media (max-width: vars.$screen-md) {
+    & {
+      text-align: center;
+    }
+  }
+}
+
+.title_center {
+  text-align: center;
+}

@@ -1,0 +1,42 @@
+@use 'mixins' as mixins;
+@use 'variables' as vars;
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  font-family: "Roboto", "Space Grotesk", sans-serif;
+  color-scheme: light dark;
+  color: vars.$main-dark;
+  background-color: #fff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk";
+  @include mixins.font-large;
+}
+
+p {
+  font-family: "Roboto";
+  @include mixins.font-medium;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+}

@@ -1,0 +1,23 @@
+@use '@global/variables' as vars;
+
+.slider__container {
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width: vars.$screen-md) {
+    & {
+      width: vars.$screen-md;
+    }
+  }
+
+  @media (max-width: 672px) {
+    & {
+      margin: 0 auto;
+      width: 380px;
+    }
+  }
+}
+
+.slide {
+  width: fit-content !important;
+}

@@ -1,0 +1,41 @@
+.article {
+  h3 {
+    font-family: "Roboto Condensed";
+  }
+}
+
+.article__nav {
+  padding-left: 0;
+  counter-reset: item;
+
+  ol {
+    padding-left: 16px;
+  }
+}
+
+.article__nav__item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  counter-increment: item;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  gap: 8px;
+  margin-bottom: 16px;
+
+  &:before {
+    font-family: "Rhodium Libre", serif;
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #000;
+    content: counters(item, ".") " ";
+  }
+}

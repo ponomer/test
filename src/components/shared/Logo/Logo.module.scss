@@ -1,0 +1,18 @@
+@use '@global/mixins' as mixins;
+
+.logo__container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  height: 64px;
+  gap: 24px;
+}
+
+.logoImg__container {
+  height: fit-content;
+  width: fit-content;
+}
+
+.logo__name {
+  @include mixins.font-xLarge;
+}

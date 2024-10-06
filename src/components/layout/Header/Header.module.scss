@@ -1,0 +1,174 @@
+@use '@global/variables' as vars;
+@use '@global/mixins' as mixins;
+
+.header__wrapper {
+  position: relative;
+  flex: 1 1 auto;
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      height: 64px;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  top: 25px;
+  width: 451px;
+  height: fit-content;
+  padding: 24px 24px 96px;
+  background-color: vars.$mudium-blue;
+  border-radius: 16px;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 1;
+  
+  @include mixins.transition-base;
+
+  @media (max-width: vars.$screen-lg) {
+    & {
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      position: absolute;
+      top: -25px;
+      left: -20px;
+      border-radius: 0;
+    }
+  }
+}
+
+.toogleButton__container {
+  position: relative;
+}
+
+.toogleButton {
+  position: absolute;
+  cursor: pointer;
+  right: -81px;
+  height: 64px;
+  width: 64px;
+  background-color: #fff;
+  border-radius: 0 50% 50% 0;
+  z-index: 999;
+
+  @media (max-width: vars.$screen-lg) {
+    & {
+      height: 48px;
+      width: 48px;
+      right: -42px;
+      top: 8px;
+    }
+  }
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.header_collapsed {
+  width: 98px;
+  padding: 24px 17px 96px;
+  height: min-content;
+
+  @media (max-width: vars.$screen-lg) {
+    & {
+      top: 0;
+      padding: 12px 14px;
+    }
+  }
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      top: 0;
+      left: 0;
+      background-color: #fff;
+      width: 100%;
+    }
+  }
+}
+
+.collapsChild {
+  visibility: hidden;
+
+  @media (max-width: vars.$screen-lg) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.logo {
+  margin-bottom: 32px;
+}
+
+.logo_collapsed {
+  display: block;
+
+  svg {
+    width: initial;
+  }
+
+  h3 {
+    visibility: hidden;
+    display: block;
+  }
+
+  @media (max-width: vars.$screen-lg) {
+    & {
+      margin-bottom: 0;
+    }
+
+    h3 {
+      display: none;
+    }
+  }
+
+  @media (max-width: vars.$screen-sm) {
+    & {
+      display: flex;
+    }
+
+    h3 {
+      visibility: visible;
+      display: block;
+    }
+  }
+}
+
+.nav {
+  overflow: hidden;
+}
+
+.main__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 24px;
+
+  @include mixins.font-large;
+}
+
+.main__nav_collapsed {
+  @media (max-width: vars.$screen-lg) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.navListItem_collapsed {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.navLink_collapsed {
+  display: none;
+}
