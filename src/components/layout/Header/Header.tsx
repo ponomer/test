@@ -12,6 +12,9 @@ interface IHeaderProps extends PropsWithChildren {
 }
 
 export default function Header({isCollapsed, isMobile, handleOpen, handleClose, children}: IHeaderProps) {
+  const listItemClassName = clsx(isCollapsed && styles.navListItem_collapsed);
+  const linkLabelClassName = clsx(isCollapsed && styles.navLink_collapsed);
+
   const onOpen = (evt: MouseEvent) => {
     evt.stopPropagation();
     handleOpen();
@@ -37,27 +40,27 @@ export default function Header({isCollapsed, isMobile, handleOpen, handleClose, 
             {...isMobile && {onClick: onOpen}}
           />
           <ul className={clsx(styles.main__nav, isCollapsed && styles.main__nav_collapsed)}>
-            <li className={clsx(isCollapsed && styles.navListItem_collapsed)}>
+            <li className={listItemClassName}>
               <a href="#">
                 ☲
-                <span className={clsx(isCollapsed && styles.navLink_collapsed)}>&nbsp;Home</span></a>
+                <span className={linkLabelClassName}>&nbsp;Home</span></a>
             </li>
-            <li className={clsx(isCollapsed && styles.navListItem_collapsed)}>
+            <li className={listItemClassName}>
               <a href="#">
                 ☳
-                <span className={clsx(isCollapsed && styles.navLink_collapsed)}>&nbsp;All Blog Topics</span>
+                <span className={linkLabelClassName}>&nbsp;All Blog Topics</span>
               </a>
             </li>
-            <li className={clsx(isCollapsed && styles.navListItem_collapsed)}>
+            <li className={listItemClassName}>
               <a href="#">
                 ☵
-                <span className={clsx(isCollapsed && styles.navLink_collapsed)}>&nbsp;About</span>
+                <span className={linkLabelClassName}>&nbsp;About</span>
               </a>
             </li>
-            <li className={clsx(isCollapsed && styles.navListItem_collapsed)}>
+            <li className={listItemClassName}>
               <a href="#">
                 ☷
-                <span className={clsx(isCollapsed && styles.navLink_collapsed)}>&nbsp;Contacts</span>
+                <span className={linkLabelClassName}>&nbsp;Contacts</span>
               </a>
             </li>
           </ul>
